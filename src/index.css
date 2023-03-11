@@ -5,7 +5,8 @@
 @layer base{
   /* Place to add more generic styles */
   h1{
-    @apply text-ellipsis; 
+    @apply text-3xl;
     /* @apply use to apply tailwind css */
+    @apply text-blue-edited-200;
   }
 }

@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* Use for development process (Show warnings) Not an complusary */}
+    {/* Use for development process (Show warnings) Not complusary */}
     <App /> {/* Root Component For whole Project */}
   </React.StrictMode>
 );

@@ -4,4 +4,8 @@
 
 @layer base{
   /* Place to add more generic styles */
+  h1{
+    @apply text-ellipsis; 
+    /* @apply use to apply tailwind css */
+  }
 }

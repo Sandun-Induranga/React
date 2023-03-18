@@ -10,6 +10,10 @@ module.exports = {
           300:"#03045e",
           200:"#023e8a"
         }
+      },
+      // font-family: 'Poppins', sans-serif;
+      fontFamily:{
+        'poppins' : ['Poppins','sans-serif'],
       }
     },
   },

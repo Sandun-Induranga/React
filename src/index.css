@@ -7,6 +7,6 @@
   h1 {
     @apply text-3xl;
     /* @apply use to apply tailwind css */
-    @apply text-blue-edited-200;
+    @apply text-white;
   }
 }

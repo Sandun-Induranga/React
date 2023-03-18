@@ -8,8 +8,12 @@ export default class App extends Component {
 
   render(): React.ReactNode {
     return (
-      <div className="bg-blue-edited-200">
-        <h1 className="text-center font-light min-h-screen">Hello World</h1>
+      <div className="bg-blue-edited-200 min-h-screen">
+        <h1 className="text-center font-semibold">Hello World</h1>
+        <h2 className="text-center font-light">Hello World</h2>
+        <h3 className="text-center font-light">Hello World</h3>
+        <h4 className="text-center font-light">Hello World</h4>
+        <h5 className="text-center font-light">Hello World</h5>
       </div>
     );
   }

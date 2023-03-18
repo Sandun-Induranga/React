@@ -1,9 +1,11 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import userImage from "../../assets/user.png";
 
 export default class Header extends Component {
   render() {
+    const activeLink = "border-b-2";
+
     return (
       <div className="bg-blue-edited-300 text-white fixed w-full h-20 top-0 p-4">
         <div className="w-full h-full">
@@ -13,16 +15,27 @@ export default class Header extends Component {
             </div>
             <div className="w-1/2 h-full items-center">
               <div className="flex justify-between h-full items-center">
-                {/* <h4 className="cursor-pointer text-lg">Home</h4> */}
-                <Link to={"/"}>Home</Link>
-                <Link to={"/about"}>About</Link>
-                <Link to={"/contact"}>Contact</Link>
-                <Link to={"/profile"}>
+                <NavLink
+                  to={"/"}
+                  className={({ isActive }) => (isActive ? activeLink : "")}
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  to={"/about"}
+                  className={({ isActive }) => (isActive ? activeLink : "")}
+                >
+                  About
+                </NavLink>
+                <NavLink
+                  to={"/contact"}
+                  className={({ isActive }) => (isActive ? activeLink : "")}
+                >
+                  Contact
+                </NavLink>
+                <NavLink to={"/profile"}>
                   <img src={userImage} alt="user" className="w-10 h-10" />
-                </Link>
-                {/* <h4 className="cursor-pointer text-lg">About</h4>
-
-                <h4 className="cursor-pointer text-lg">Contact</h4> */}
+                </NavLink>
               </div>
             </div>
           </div>

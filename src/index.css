@@ -7,6 +7,6 @@
   h1 {
     @apply text-3xl;
     /* @apply use to apply tailwind css */
-    @apply text-white;
+    @apply text-purple-800;
   }
 }

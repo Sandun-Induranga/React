@@ -14,6 +14,15 @@ export default class Counter extends Component<CounterProps, CounterState> {
       count: 0,
     };
     this.increaseCount = this.increaseCount.bind(this);
+    alert("Constructor Called");
+  }
+
+  componentDidMount(): void {
+    alert("Mounted");
+  }
+
+  componentDidUpdate(): void {
+    alert("Updated");
   }
 
   increaseCount() {

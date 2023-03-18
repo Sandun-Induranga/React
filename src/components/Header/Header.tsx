@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import userImage from "../../assets/user.png";
 
 export default class Header extends Component {
@@ -12,10 +13,16 @@ export default class Header extends Component {
             </div>
             <div className="w-1/2 h-full items-center">
               <div className="flex justify-between h-full items-center">
-                <h4 className="cursor-pointer text-lg">Home</h4>
-                <h4 className="cursor-pointer text-lg">About</h4>
-                <h4 className="cursor-pointer text-lg">Contact</h4>
-                <img src={userImage} alt="user" className="w-10 h-10" />
+                {/* <h4 className="cursor-pointer text-lg">Home</h4> */}
+                <Link to={"/"}>Home</Link>
+                <Link to={"/about"}>About</Link>
+                <Link to={"/contact"}>Contact</Link>
+                <Link to={"/profile"}>
+                  <img src={userImage} alt="user" className="w-10 h-10" />
+                </Link>
+                {/* <h4 className="cursor-pointer text-lg">About</h4>
+
+                <h4 className="cursor-pointer text-lg">Contact</h4> */}
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -10,7 +11,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/* Use for development process (Show warnings) Not complusary */}
-    <App /> {/* Root Component For whole Project */}
+    {/* Root Component For whole Project */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

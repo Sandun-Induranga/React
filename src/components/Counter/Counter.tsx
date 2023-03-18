@@ -13,13 +13,20 @@ export default class Counter extends Component<CounterProps, CounterState> {
     this.state = {
       count: 0,
     };
+    this.increaseCount = this.increaseCount.bind(this);
   }
 
-  increaseCount = () => {
+  increaseCount() {
+    // Normal Function
     this.setState({ count: this.state.count + 1 });
-  };
+  }
+
+  // increaseCount = () => {
+  //   this.setState({ count: this.state.count + 1 });
+  // };
 
   decreaseCount = () => {
+    // Arrow function
     if (this.state.count >= 10) {
     }
     this.setState({ count: this.state.count - 1 });

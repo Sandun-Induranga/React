@@ -20,6 +20,8 @@ export default class Counter extends Component<CounterProps, CounterState> {
   };
 
   decreaseCount = () => {
+    if (this.state.count >= 10) {
+    }
     this.setState({ count: this.state.count - 1 });
   };
 
@@ -32,12 +34,14 @@ export default class Counter extends Component<CounterProps, CounterState> {
           </h1>
           <div className="flex space-x-4 mt-20 justify-center">
             <button
+              disabled={this.state.count === 10}
               className="border text-green-800 border-green-800 rounded-xl hover:bg-green-800 hover:text-white py-2 px-4"
               onClick={this.increaseCount}
             >
               Increase
             </button>
             <button
+              disabled={this.state.count === 0}
               className="border text-red-800 border-red-800 rounded-xl hover:bg-red-800 hover:text-white py-2 px-4"
               onClick={this.decreaseCount}
             >

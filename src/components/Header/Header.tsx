@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import userImage from "../../assets/user.png";
-import logo from "../../assets/logo.jpeg";
+import logo from "../../assets/logo.png";
 
 export default class Header extends Component {
   render() {
@@ -11,12 +11,12 @@ export default class Header extends Component {
       <div className="bg-blue-edited-300 text-white fixed w-full h-20 top-0 p-4">
         <div className="w-full h-full">
           <div className="flex w-full h-full">
-            <div className="w-1/2">
-              <img src={logo} className="w-12 h-12 rounded-full" alt="logo" />
+            <div className="w-1/2 flex items-center">
+              <img src={logo} className="w-20 h-12 rounded-full" alt="logo" />
               <h1>LOGO</h1>
             </div>
             <div className="w-1/2 h-full items-center">
-              <div className="flex justify-between h-full items-center">
+              <div className="flex justify-end gap-20 h-full items-center">
                 <NavLink
                   to={"/"}
                   className={({ isActive }) => (isActive ? activeLink : "")}

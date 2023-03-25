@@ -3,8 +3,10 @@ import { Component } from "react";
 import Tag from "../Tag";
 
 type PostProps = {
+  id: string;
   title: string;
   description: string;
+  hourCount: number;
   tags: string[];
 };
 

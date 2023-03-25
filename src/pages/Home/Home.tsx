@@ -1,15 +1,74 @@
+import { type } from "os";
 import { Component } from "react";
 import Post from "../../components/Post";
 
-export default class Home extends Component {
+type PostDetail = {
+  id: string;
+  titile: string;
+  description: string;
+  hourCount: number;
+  tags: string[];
+};
+
+type HomeProps = {};
+
+type HomeState = {
+  postList: PostDetail[];
+};
+
+export default class Home extends Component<HomeProps, HomeState> {
+  constructor(props: HomeProps) {
+    super(props);
+    this.state = {
+      postList: [
+        {
+          id: "1",
+          titile: "Post 1",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ducimus recusandae velit ullam, quos a eum consequuntur et praesentium omnis nobis? Maxime velit nesciunt at aperiam perspiciatis necessitatibus, itaque esse. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ducimus recusandae velit ullam, quos a eum consequuntur et praesentium omnis nobis? Maxime velit nesciunt at aperiam perspiciatis necessitatibus, itaque esse.",
+          hourCount: 10,
+          tags: ["ui", "ux"],
+        },
+        {
+          id: "2",
+          titile: "Post 2",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ducimus recusandae velit ullam, quos a eum consequuntur et praesentium omnis nobis? Maxime velit nesciunt at aperiam perspiciatis necessitatibus, itaque esse. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ducimus recusandae velit ullam, quos a eum consequuntur et praesentium omnis nobis? Maxime velit nesciunt at aperiam perspiciatis necessitatibus, itaque esse.",
+          hourCount: 10,
+          tags: ["ui", "ux"],
+        },
+        {
+          id: "3",
+          titile: "Post 3",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ducimus recusandae velit ullam, quos a eum consequuntur et praesentium omnis nobis? Maxime velit nesciunt at aperiam perspiciatis necessitatibus, itaque esse. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ducimus recusandae velit ullam, quos a eum consequuntur et praesentium omnis nobis? Maxime velit nesciunt at aperiam perspiciatis necessitatibus, itaque esse.",
+          hourCount: 10,
+          tags: ["ui", "ux"],
+        },
+        {
+          id: "4",
+          titile: "Post 4",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ducimus recusandae velit ullam, quos a eum consequuntur et praesentium omnis nobis? Maxime velit nesciunt at aperiam perspiciatis necessitatibus, itaque esse. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ducimus recusandae velit ullam, quos a eum consequuntur et praesentium omnis nobis? Maxime velit nesciunt at aperiam perspiciatis necessitatibus, itaque esse.",
+          hourCount: 10,
+          tags: ["ui", "ux"],
+        },
+      ],
+    };
+  }
+
   render() {
     return (
       <div className="p-6">
-        <Post
-          title="React"
-          description="Introduction to React"
-          tags={["intro", "frontend"]}
-        />
+        {this.state.postList.map((post) => (
+          <Post
+            id={post.id}
+            title={post.id}
+            description={post.description}
+            hourCount={post.hourCount}
+            tags={post.tags}
+          />
+        ))}
       </div>
     );
   }

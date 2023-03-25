@@ -17,8 +17,9 @@ export default class Post extends Component<PostProps, PostState> {
         <h3 className="text-3xl">{this.props.title}</h3>
         <p className="text-xl p-4">{this.props.description}</p>
         <div className="flex gap-6 justify-center">
-          <Tag tag={this.props.tags[0]} />
-          <Tag tag={this.props.tags[1]} />
+          {this.props.tags.map((text) => (
+            <Tag tag={text} />
+          ))}
         </div>
       </div>
     );

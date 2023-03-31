@@ -1,5 +1,6 @@
 import { type } from "os";
 import { Component } from "react";
+import Header from "../../components/Header";
 import Post from "../../components/Post";
 
 type PostDetail = {
@@ -59,17 +60,20 @@ export default class Home extends Component<HomeProps, HomeState> {
 
   render() {
     return (
-      <div className="p-6">
-        {this.state.postList.map((post) => (
-          <Post
-            id={post.id}
-            title={post.id}
-            description={post.description}
-            hourCount={post.hourCount}
-            tags={post.tags}
-          />
-        ))}
-      </div>
+      <>
+        <Header />
+        <div className="p-6">
+          {this.state.postList.map((post) => (
+            <Post
+              id={post.id}
+              title={post.titile}
+              description={post.description}
+              hourCount={post.hourCount}
+              tags={post.tags}
+            />
+          ))}
+        </div>
+      </>
     );
   }
 }

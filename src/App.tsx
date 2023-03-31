@@ -16,13 +16,7 @@ export default class App extends Component {
   render(): React.ReactNode {
     return (
       <div className="min-h-screen font-poppins">
-        <Header />
         <Content />
-        {/* <Home />
-        <About />
-        <Contact />
-        <Profile /> */}
-        {/* <Counter /> */}
       </div>
     );
   }

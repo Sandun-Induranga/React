@@ -2,14 +2,7 @@ import { type } from "os";
 import { Component } from "react";
 import Header from "../../components/Header";
 import Post from "../../components/Post";
-
-type PostDetail = {
-  id: string;
-  titile: string;
-  description: string;
-  hourCount: number;
-  tags: string[];
-};
+import { PostDetail } from "../../types/PostDetail";
 
 type HomeProps = {};
 

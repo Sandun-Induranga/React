@@ -82,11 +82,12 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
       tags: tagsArray,
     };
 
-    alert("Saved..!");
-
     this.setState((prevState) => ({
       postList: [post, ...prevState.postList],
     }));
+
+    alert("Saved..!");
+    this.clearState();
   };
 
   handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -102,6 +103,17 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
       return tagString.split(",").map((tag) => tag.trim());
     }
     return [];
+  };
+
+  clearState = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      title: "",
+      description: "",
+      hoursCount: 0,
+      lecturerName: "",
+      tagString: "",
+    }));
   };
 
   render() {

@@ -1,4 +1,3 @@
-import { type } from "os";
 import { Component } from "react";
 import Header from "../../components/Header";
 import Post from "../../components/Post";

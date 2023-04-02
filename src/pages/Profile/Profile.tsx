@@ -67,7 +67,26 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
 
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const { title, description, hoursCount, lecturerName, tagString } =
+      this.state;
+
+    let tagsArray = this.convertTagStringToArray(tagString);
+
+    let post = {
+      id: "4",
+      title: title,
+      description: description,
+      hoursCount: hoursCount,
+      lecturerName: lecturerName,
+      tags: tagsArray,
+    };
+
     alert("Saved..!");
+
+    this.setState((prevState) => ({
+      postList: [post, ...prevState.postList],
+    }));
   };
 
   handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -76,6 +95,13 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
       ...prevState,
       [name]: value,
     }));
+  };
+
+  convertTagStringToArray = (tagString: string): string[] => {
+    if (tagString !== "") {
+      return tagString.split(",").map((tag) => tag.trim());
+    }
+    return [];
   };
 
   render() {
@@ -171,7 +197,7 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
                       fullWidth={true}
                       required
                     />
-                    <button className="py-2 bg-accent-navy-200 text-white rounded">
+                    <button className="py-2 bg-blue-900 text-white rounded">
                       <h6>Publish Post</h6>
                     </button>
                   </form>

@@ -1,14 +1,9 @@
 import { type } from "os";
 import { Component } from "react";
 import Tag from "../Tag";
+import { PostDetail } from "../../types/PostDetail";
 
-type PostProps = {
-  id: string;
-  title: string;
-  description: string;
-  hourCount: number;
-  tags: string[];
-};
+type PostProps = PostDetail;
 
 type PostState = {};
 

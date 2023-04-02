@@ -1,7 +1,7 @@
 import { ChangeEvent, Component } from "react";
 import Header from "../../components/Header";
 import Post from "../../components/Post";
-import { PostDetails } from "../../types/PostDetails";
+import { PostDetail } from "../../types/PostDetail";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
@@ -10,7 +10,7 @@ import { Divider, TextField } from "@mui/material";
 type ProfileProps = {};
 
 type ProfileState = {
-  postList: PostDetails[];
+  postList: PostDetail[];
   isClickedCreateNewPost: boolean;
   title: string;
   description: string;
@@ -67,16 +67,11 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
 
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Submitted");
+    alert("Saved..!");
   };
 
   handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("Changed");
-    console.log(event.target.value);
-
-    // desctructuring assignment
     const { name, value } = event.target;
-
     this.setState((prevState) => ({
       ...prevState,
       [name]: value,
@@ -92,7 +87,7 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
             {!this.state.isClickedCreateNewPost ? (
               <>
                 <div
-                  className="cursor-pointer w-full p-4 bg-accent-navy-200 text-white rounded flex justify-between items-center"
+                  className="cursor-pointer w-full p-4 bg-blue-900 text-white rounded flex justify-between items-center"
                   onClick={this.handleClickCreateNewPost}
                 >
                   <h6>Create New Post</h6>
@@ -109,7 +104,7 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
             ) : (
               <>
                 <div
-                  className="cursor-pointer w-full p-4 bg-accent-navy-200 text-white rounded flex justify-between items-center"
+                  className="cursor-pointer w-full p-4 bg-blue-900 text-white rounded flex justify-between items-center"
                   onClick={this.handleClickCreateNewPost}
                 >
                   <h6>Discard Post</h6>
@@ -190,11 +185,12 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
           {this.state.postList.map((post) => (
             <Post
               key={post.id}
+              id={post.id}
               title={post.title}
               description={post.description}
+              hoursCount={post.hoursCount}
+              lecturerName={post.lecturerName}
               tags={post.tags}
-              // hoursCount={post.hoursCount}
-              // lecturerName={post.lecturerName}
             />
           ))}
         </div>

@@ -1,7 +1,8 @@
-export type PostDetails = {
+export type PostDetail = {
   id: string;
   title: string;
   description: string;
-  hoursCount: number;
+  hoursCount?: number;
+  lecturerName?: string;
   tags: string[];
 };
